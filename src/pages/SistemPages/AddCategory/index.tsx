@@ -1,3 +1,5 @@
+import { RiAddLine } from "react-icons/ri";
+import Base from "../../../components/Base";
 import { Container } from "../../../components/Container";
 import CreateCategory from "../../../components/CreateCategory";
 import Footer from "../../../components/Footer";
@@ -12,7 +14,13 @@ const AddCategory: React.FC = () => {
         <MainHeader />
         <div className="d-flex w-100">
           <Sidebar />
-          <CreateCategory />
+          <Base title="Adicionar categoria">
+            <CreateCategory
+              placeholder="Adicionar categoria"
+              buttonName="Adicionar"
+              icon={<RiAddLine />}
+            />
+          </Base>
         </div>
       </Container>
       <Footer />

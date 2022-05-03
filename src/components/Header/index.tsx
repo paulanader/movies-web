@@ -1,4 +1,4 @@
-import { DarkHeader, MainHeader } from "./styles";
+import { DarkHeader, MainHeader, Span } from "./styles";
 
 import { AiOutlineMenu } from "react-icons/ai";
 import Dropdown from "../Dropdown";
@@ -39,7 +39,7 @@ const Header: React.FC = () => {
                     aria-current="page"
                     to="/"
                   >
-                    Home
+                    <Span>Home</Span>
                   </Link>
                 </li>
                 <li className="nav-item">
@@ -48,7 +48,7 @@ const Header: React.FC = () => {
                     aria-current="page"
                     to="/movies"
                   >
-                    Filmes
+                    <Span>Filmes</Span>
                   </Link>
                 </li>
                 <li className="nav-item">
@@ -60,7 +60,7 @@ const Header: React.FC = () => {
                     aria-current="page"
                     to="/actors"
                   >
-                    Atores
+                    <Span>Atores</Span>
                   </Link>
                 </li>
                 <li className="nav-item">
@@ -69,7 +69,7 @@ const Header: React.FC = () => {
                     aria-current="page"
                     to="/login"
                   >
-                    Login
+                    <Span>Login</Span>
                   </Link>
                 </li>
               </ul>

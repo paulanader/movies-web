@@ -6,7 +6,7 @@ interface INavLinkProps {
   children: string;
   to: string;
   isActive?: boolean;
-  _onClick: () => void;
+  _onClick?: () => void;
 }
 
 const SidebarLink: React.FC<INavLinkProps> = ({

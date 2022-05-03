@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 export const DarkHeader = styled.header`
@@ -22,3 +23,13 @@ export const Logo = styled.div`
     font-size: 1.5rem;
   }
 `;
+
+export const Span = styled.span`
+  font-size: 20px;
+
+  &:hover {
+    color: var(--yellow);
+  }
+`;
+
+export const StyleLink = styled(Link)``;

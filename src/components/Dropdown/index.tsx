@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { CategoryType } from "../../@types/CategoryType";
 import { useCategories } from "../../hooks/CategoryProvider";
+import { Span } from "../Header/styles";
 
 interface IDropdownProp {
   _setCategory: (category: CategoryType) => void;
@@ -29,7 +30,7 @@ const Dropdown: React.FC<IDropdownProp> = ({ _setCategory }) => {
             data-bs-toggle="dropdown"
             aria-expanded="false"
           >
-            Categorias
+            <Span>Categorias</Span>
           </a>
           <ul
             className="dropdown-menu dropdown-menu-dark"

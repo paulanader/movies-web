@@ -1,96 +1,81 @@
-import { useState } from "react";
 import {
   RiAddLine,
-  RiArrowUpDownLine,
   RiDashboardLine,
   RiDeleteBin7Fill,
+  RiPencilLine,
 } from "react-icons/ri";
 import SidebarLink from "./SidebarLink";
 import SidebarSection from "./SidebarSection";
 import { SidebarStyles } from "./styles";
 
 const Sidebar: React.FC = () => {
-  const [isActive, setIsActive] = useState(false);
   return (
     <SidebarStyles className="me-4">
       <div className="flex-start">
         <SidebarSection title="CATEGORIAS">
           <SidebarLink
-            isActive={isActive}
             children="Todas"
             to="/browse/allcategories"
             icon={<RiDashboardLine size={20} />}
-            _onClick={() => setIsActive(true)}
           />
           <SidebarLink
             children="Cadastrar"
             to="/browse/addcategory"
             icon={<RiAddLine size={20} />}
-            _onClick={() => setIsActive(true)}
           />
           <SidebarLink
-            children="Atualizar"
-            to="/browse/categorias/atualizar"
-            icon={<RiArrowUpDownLine size={20} />}
-            _onClick={() => setIsActive(true)}
+            children="Editar"
+            to="/browse/updatecategory"
+            icon={<RiPencilLine size={20} />}
           />
           <SidebarLink
             children="Deletar"
-            to="/browse/categorias/deletar"
+            to="/browse/dellcategory"
             icon={<RiDeleteBin7Fill size={20} />}
-            _onClick={() => setIsActive(true)}
           />
         </SidebarSection>
         <SidebarSection title="ATORES">
           <SidebarLink
             children="Todas"
-            to="/browse/atores/todas"
+            to="/browse/allactors"
             icon={<RiDashboardLine size={20} />}
-            _onClick={() => setIsActive(true)}
           />
           <SidebarLink
             children="Cadastrar"
-            to="/browse/atores/cadastrar"
+            to="/browse/addactor"
             icon={<RiAddLine size={20} />}
-            _onClick={() => setIsActive(true)}
           />
           <SidebarLink
-            children="Atualizar"
-            to="/browse/atores/atualizar"
-            icon={<RiArrowUpDownLine size={20} />}
-            _onClick={() => setIsActive(true)}
+            children="Editar"
+            to="/browse/updateactor"
+            icon={<RiPencilLine size={20} />}
           />
           <SidebarLink
             children="Deletar"
-            to="/browse/atores/deletar"
+            to="/browse/dellactor"
             icon={<RiDeleteBin7Fill size={20} />}
-            _onClick={() => setIsActive(true)}
           />
         </SidebarSection>
         <SidebarSection title="FILMES">
           <SidebarLink
             children="Todas"
-            to="/browse/filmes/todas"
+            to="/browse/allmovies"
             icon={<RiDashboardLine size={20} />}
-            _onClick={() => setIsActive(true)}
           />
           <SidebarLink
             children="Cadastrar"
-            to="/browse/filmes/cadastrar"
+            to="/browse/addmovies"
             icon={<RiAddLine size={20} />}
-            _onClick={() => setIsActive(true)}
           />
           <SidebarLink
-            children="Atualizar"
-            to="/browse/filmes/atualizar"
-            icon={<RiArrowUpDownLine size={20} />}
-            _onClick={() => setIsActive(true)}
+            children="Editar"
+            to="/browse/updatemovies"
+            icon={<RiPencilLine size={20} />}
           />
           <SidebarLink
             children="Deletar"
-            to="/browse/filmes/deletar"
+            to="/browse/dellmovie"
             icon={<RiDeleteBin7Fill size={20} />}
-            _onClick={() => setIsActive(true)}
           />
         </SidebarSection>
       </div>

@@ -5,10 +5,10 @@ export const Contant = styled.div`
   align-items: start;
   color: #fff;
   background: #1a202c;
-  border-radius: 10px;
+  border-radius: 30px;
 `;
 
-export const Input = styled.input`
+export const StyleInput = styled.input`
   background: #1a202c;
   color: #fff;
   border: none;
