@@ -1,17 +1,33 @@
 import { Container } from "./styles";
 import { SubmitHandler, useForm } from "react-hook-form";
 
+import * as yup from "yup";
+import { yupResolver } from "@hookform/resolvers/yup";
+
 type SignInFormData = {
   email: string;
   password: string;
 };
 
-export const LoginComponent = () => {
-  const { register, handleSubmit } = useForm<SignInFormData>();
+const signInFormSchema = yup.object().shape({
+  email: yup.string().required("E-mail obrigatório").email("E-mail inválido"),
+  password: yup.string().min(6).required("Senha obrigatória"),
+});
 
-  const handleSignIn: SubmitHandler<SignInFormData> = (values) => {
+export const LoginComponent = () => {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<SignInFormData>({
+    resolver: yupResolver(signInFormSchema),
+  });
+
+  const handleSignIn: SubmitHandler<SignInFormData> = async (values) => {
+    await new Promise((resolve) => setTimeout(resolve, 3000));
     console.log(values);
   };
+
   return (
     <Container className="container">
       <div className="container-login">
@@ -24,8 +40,9 @@ export const LoginComponent = () => {
                 type="email"
                 {...register("email")}
               />
-              <span className="focus-input" data-placeholder="Email"></span>
+              <span className="focus-input" data-placeholder="E-mail"></span>
             </div>
+
             <div className="wrap-input">
               <input
                 className={"has-value input"}

@@ -6,6 +6,8 @@ export const GlobalStyle = createGlobalStyle`
     --black10: rgba(0, 0, 0, 0.9)
     --white: #ffffff;
     --yellow: #FFD640
+    --gray50: #E2E8F0;
+    --gray400: #A0AEC0;
      }
 
     html, body, #root {
