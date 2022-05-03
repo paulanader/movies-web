@@ -18,7 +18,7 @@ const Sidebar: React.FC = () => {
           <SidebarLink
             isActive={isActive}
             children="Todas"
-            to="/browse/categorias/todas"
+            to="/browse/allcategories"
             icon={<RiDashboardLine size={20} />}
             _onClick={() => setIsActive(true)}
           />

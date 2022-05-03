@@ -9,6 +9,7 @@ import Login from "../pages/Login";
 import Movie from "../pages/Movie";
 import Movies from "../pages/Movies";
 import AddCategory from "../pages/SistemPages/AddCategory";
+import AllCategories from "../pages/SistemPages/AllCategories";
 
 const PagesRoutes: React.FC = () => {
   return (
@@ -23,6 +24,7 @@ const PagesRoutes: React.FC = () => {
         <Route path="/login" element={<Login />} />
         <Route path="/browse" element={<Browse />} />
         <Route path="/browse/addcategory" element={<AddCategory />} />
+        <Route path="/browse/allcategories" element={<AllCategories />} />
       </Routes>
     </BrowserRouter>
   );

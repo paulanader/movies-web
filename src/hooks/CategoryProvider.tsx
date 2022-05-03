@@ -10,9 +10,14 @@ import {
 import { CategoryType } from "../@types/CategoryType";
 import Api from "../services/api";
 
+interface ICreateCategoryProps {
+  name: string;
+}
+
 interface ICategoryContextProp {
   categories: CategoryType[];
   getCategories: (withMovies?: boolean) => void;
+  createCategory: (transaction: ICreateCategoryProps) => Promise<void>;
 }
 
 // Aqui é definido o Context (não precisa entender, é sempre exatamente assim)
@@ -56,12 +61,23 @@ export const CategoryProvider = ({
       .finally();
   }, []);
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  const createCategory = async (newCategory: ICreateCategoryProps) => {
+    const response = await Api.post(`/categories`, {
+      ...newCategory,
+    });
+    const { categoryNew } = response.data;
+
+    setCategories([...categories, categoryNew]);
+  };
+
   const providerValue = useMemo(
     () => ({
       categories,
       getCategories,
+      createCategory,
     }),
-    [categories, getCategories]
+    [categories, getCategories, createCategory]
   );
 
   return (
