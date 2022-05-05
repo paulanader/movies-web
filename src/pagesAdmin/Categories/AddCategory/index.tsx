@@ -5,32 +5,30 @@ import Footer from "../../../components/Footer";
 import Input from "../../../components/Input";
 import MainHeader from "../../../components/MainHeader";
 import Sidebar from "../../../components/Sidebar";
-import TextArea from "../../../components/TextArea";
 import { Wrapper } from "../../../components/Wrapper";
 
-const AddActor: React.FC = () => {
+const AddCategory: React.FC = () => {
   return (
     <Wrapper>
       <Container>
         <MainHeader />
         <div className="d-flex w-100">
           <Sidebar />
-          <Base title="Adicionar ator">
+          <Base>
+            <div className="text-white">
+              <h3>Adicionar categoria</h3>
+            </div>
             <div
               className="row row-cols-1 align-items-center justify-content-center text-center mt-5"
               onSubmit={() => {}}
             >
               <div className="col">
-                <Input placeholder="Nome completo" name="" />
-                <Input placeholder="URL imagem" name="" />
-                <Input placeholder="Data de nascimento AAAA-MM-DD" name="" />
-                <Input placeholder="Local de nascimento" name="" />
-                <TextArea placeholder="Bibliografia" name={""} />
+                <Input placeholder="Nome da categoria" name="" />
               </div>
               <div className="col mt-4">
                 <button
                   type="button"
-                  className="btn btn-warning align-items-center text-white fw-bold mb-5"
+                  className="btn btn-primary align-items-center text-white fw-bold mb-5"
                   onClick={() => {}}
                 >
                   <span className="me-1">
@@ -48,4 +46,4 @@ const AddActor: React.FC = () => {
   );
 };
 
-export default AddActor;
+export default AddCategory;

@@ -50,7 +50,7 @@ const CreateCategory: React.FC<ICreateCategoryProps> = ({
       <div className="col col-sm-3">
         <button
           type="button"
-          className="btn btn-warning align-items-center text-white fw-bold"
+          className="btn btn-primary align-items-center text-white fw-bold"
           onClick={handleCreateNewCategory}
         >
           <span className="me-1">{icon}</span>

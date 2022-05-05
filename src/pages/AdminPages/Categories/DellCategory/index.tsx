@@ -1,12 +1,12 @@
 import { Fragment, useEffect } from "react";
 import { RiDeleteBin7Fill } from "react-icons/ri";
-import Base from "../../../components/Base";
-import { Container } from "../../../components/Container";
-import Footer from "../../../components/Footer";
-import MainHeader from "../../../components/MainHeader";
-import Sidebar from "../../../components/Sidebar";
-import { Wrapper } from "../../../components/Wrapper";
-import { useCategories } from "../../../hooks/CategoryProvider";
+import Base from "../../../../components/Base";
+import { Container } from "../../../../components/Container";
+import Footer from "../../../../components/Footer";
+import MainHeader from "../../../../components/MainHeader";
+import Sidebar from "../../../../components/Sidebar";
+import { Wrapper } from "../../../../components/Wrapper";
+import { useCategories } from "../../../../hooks/CategoryProvider";
 
 const DellCategory: React.FC = () => {
   const { categories, getCategories } = useCategories();
@@ -21,7 +21,7 @@ const DellCategory: React.FC = () => {
         <MainHeader />
         <div className="d-flex w-100">
           <Sidebar />
-          <Base title="Deletar categoria">
+          <Base>
             <div className="row row-cols-1 row-cols-sm-2 d-flex align-items-center justify-content-between mt-5">
               <div className="col col-sm-9">
                 <select
