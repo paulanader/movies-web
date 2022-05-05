@@ -2,18 +2,21 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 import Actor from "../pages/Actor";
 import Actors from "../pages/Actors";
-import Browse from "../pages/AdminPages/Browse";
 import CategoryMovie from "../pages/CategoryMovie";
 import Home from "../pages/Home";
 import Login from "../pages/Login";
 import Movie from "../pages/Movie";
 import Movies from "../pages/Movies";
-import UpDateCategory from "../pages/AdminPages/Categories/UpDateCategory";
-import AdminCategory from "../pages/AdminPages/Categories/AdminCategory";
-import AddCategory from "../pages/AdminPages/Categories/AddCategory";
-import AdminActor from "../pages/AdminPages/Actors/AdminActor";
-import AddActor from "../pages/AdminPages/Actors/AddActor";
+import AddActor from "../pagesAdmin/Actors/AddActor";
+import AdminActor from "../pagesAdmin/Actors/AdminActor";
 import UpdateActor from "../pagesAdmin/Actors/UpdateActor";
+import Browse from "../pagesAdmin/Browse";
+import AddCategory from "../pagesAdmin/Categories/AddCategory";
+import AdminCategory from "../pagesAdmin/Categories/AdminCategory";
+import UpDateCategory from "../pagesAdmin/Categories/UpDateCategory";
+import AddMovie from "../pagesAdmin/Movies/AddMovie";
+import AdminMovie from "../pagesAdmin/Movies/AdminMovie";
+import UpdateMovie from "../pagesAdmin/Movies/UpdateMovie";
 
 const PagesRoutes: React.FC = () => {
   return (
@@ -36,9 +39,9 @@ const PagesRoutes: React.FC = () => {
         <Route path="/admin/actors" element={<AdminActor />} />
         <Route path="/admin/addactor" element={<AddActor />} />
         <Route path="/admin/updateactor/:slug" element={<UpdateActor />} />
-        <Route path="/admin/movies" element={<AdminActor />} />
-        <Route path="/admin/addmovie" element={<AddActor />} />
-        <Route path="/admin/updatemovie/:slug" element={<UpdateActor />} />
+        <Route path="/admin/movies" element={<AdminMovie />} />
+        <Route path="/admin/addmovie" element={<AddMovie />} />
+        <Route path="/admin/updatemovie/:slug" element={<UpdateMovie />} />
       </Routes>
     </BrowserRouter>
   );

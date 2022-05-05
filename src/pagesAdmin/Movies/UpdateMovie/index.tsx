@@ -9,13 +9,13 @@ import MainHeader from "../../../components/MainHeader";
 import Sidebar from "../../../components/Sidebar";
 import TextArea from "../../../components/TextArea";
 import { Wrapper } from "../../../components/Wrapper";
-import { useActors } from "../../../hooks/ActorProvider";
+import { useAdminMovies } from "../../../hooks/Admin/AdminMovieProvider";
 
 const UpdateMovie: React.FC = () => {
-  const { actor, getActor } = useActors();
+  const { movie, getMovie } = useAdminMovies();
   const { slug } = useParams();
   useEffect(() => {
-    getActor(slug ?? "");
+    getMovie(slug ?? "");
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   return (
@@ -26,32 +26,45 @@ const UpdateMovie: React.FC = () => {
           <Sidebar />
           <>
             <Base>
-              <h3 className="mb-4">Editar Ator</h3>
+              <h3 className="mb-4">Editar Filme</h3>
               <div className="row row-cols-1 d-flex align-items-center justify-content-between"></div>
               <div className="col mt-3">
-                <h4>Nome</h4>
-                <Input placeholder={`${actor?.name}`} name={`${actor?.name}`} />
-                <h4>Data de nascimento</h4>
+                <h4>Título</h4>
                 <Input
-                  placeholder={`${actor?.birth_date}`}
-                  name={`${actor?.birth_date}`}
+                  placeholder={`${movie?.title}`}
+                  name={`${movie?.title}`}
                 />
-                <h4>Local de nascimento</h4>
+                <h4>Direção</h4>
                 <Input
-                  placeholder={`${actor?.birth_place}`}
-                  name={`${actor?.birth_place}`}
+                  placeholder={`${movie?.director}`}
+                  name={`${movie?.director}`}
                 />
-                <h4>URL da imagem</h4>
-
+                <h4>Score</h4>
                 <Input
-                  placeholder={`${actor?.picture}`}
-                  name={`${actor?.picture}`}
+                  placeholder={`${movie?.score}`}
+                  name={`${movie?.score}`}
                 />
-                <h4>Biografia</h4>
-
+                <h4>Ano</h4>
+                <Input placeholder={`${movie?.year}`} name={`${movie?.year}`} />
+                <h4>Duração</h4>
+                <Input
+                  placeholder={`${movie?.duration}`}
+                  name={`${movie?.duration}`}
+                />
+                <h4>URL Trailer</h4>
+                <Input
+                  placeholder={`${movie?.trailer}`}
+                  name={`${movie?.trailer}`}
+                />
+                <h4>URL Imagem</h4>
+                <Input
+                  placeholder={`${movie?.cover}`}
+                  name={`${movie?.cover}`}
+                />
+                <h4>Sinopse</h4>
                 <TextArea
-                  placeholder={`${actor?.biography}`}
-                  name={`${actor?.biography}`}
+                  placeholder={`${movie?.description}`}
+                  name={`${movie?.description}`}
                 />
               </div>
               <div className="col mt-3 text-center mb-4">

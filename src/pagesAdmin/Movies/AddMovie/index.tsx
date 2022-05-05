@@ -17,21 +17,25 @@ const AddMovie: React.FC = () => {
           <Sidebar />
           <>
             <Base>
-              <h3 className="mb-4">Adicionar Ator</h3>
+              <h3 className="mb-4">Adicionar Filme</h3>
               <div className="row row-cols-1 d-flex align-items-center justify-content-between"></div>
               <div className="col mt-3">
-                <h4>Nome</h4>
-                <Input placeholder="Nome completo" name="" />
-                <h4>Data de nascimento</h4>
-                <Input placeholder="AAAA-MM-DD" name="" />
-                <h4>Local de nascimento</h4>
-                <Input placeholder="Cidade, Estado, País" name="" />
-                <h4>URL da imagem</h4>
-
-                <Input placeholder="http://..." name="" />
-                <h4>Biografia</h4>
-
-                <TextArea placeholder="Sobre" name="" />
+                <h4>Título</h4>
+                <Input placeholder="Digite o título" name="" />
+                <h4>Direção</h4>
+                <Input placeholder="Nome do diretor" name="" />
+                <h4>Score</h4>
+                <Input placeholder="Score" name="" />
+                <h4>Ano</h4>
+                <Input placeholder="AAAA" name="" />
+                <h4>Duração</h4>
+                <Input placeholder="Em minutos" name="" />
+                <h4>URL Trailer</h4>
+                <Input placeholder="https://youtube.com/..." name="" />
+                <h4>URL Imagem</h4>
+                <Input placeholder="http://...jpg" name="" />
+                <h4>Sinopse</h4>
+                <TextArea placeholder="Sobre..." name="" />
               </div>
               <div className="col mt-3 text-center mb-4">
                 <button

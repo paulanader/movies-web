@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { RiAddLine } from "react-icons/ri";
 import { Link } from "react-router-dom";
-import AdminActorTable from "../../../components/AdminActorTable";
 import { AdminModal } from "../../../components/AdminModal";
+import AdminMoviesTable from "../../../components/AdminMoviesTable";
 import AdminPagination from "../../../components/AdminPagination";
 import Base from "../../../components/Base";
 import { Container } from "../../../components/Container";
@@ -11,14 +11,14 @@ import { Loading } from "../../../components/Loading";
 import MainHeader from "../../../components/MainHeader";
 import Sidebar from "../../../components/Sidebar";
 import { Wrapper } from "../../../components/Wrapper";
-import { useAdminActors } from "../../../hooks/Admin/AdminActorProvider";
+import { useAdminMovies } from "../../../hooks/Admin/AdminMovieProvider";
 
 const AdminMovie: React.FC = () => {
-  const { meta, actors, isLoading, getActors } = useAdminActors();
+  const { meta, movies, isLoading, getMovies } = useAdminMovies();
   const [openModal, setOpenModal] = useState(false);
 
   useEffect(() => {
-    getActors(1);
+    getMovies(1);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   return (
@@ -36,7 +36,7 @@ const AdminMovie: React.FC = () => {
                   <h3>Atores</h3>
                 </div>
                 <div className="col text-end">
-                  <Link to="/admin/addactor">
+                  <Link to="/admin/addmovie">
                     <button
                       type="button"
                       className="btn btn-primary align-items-center text-white fw-bold "
@@ -51,16 +51,16 @@ const AdminMovie: React.FC = () => {
               </div>
               {isLoading && <Loading />}
               {!isLoading && (
-                <AdminActorTable
+                <AdminMoviesTable
                   _setOpenModal={setOpenModal}
-                  categories={actors}
+                  movies={movies}
                 />
               )}
               <div className="mb-3 text-white fw-bold">
                 <AdminPagination
                   pageCount={meta ? meta.last_page : 1}
                   forcePage={meta ? meta.total : 1}
-                  onPageChange={(event) => getActors(event.selected + 1)}
+                  onPageChange={(event) => getMovies(event.selected + 1)}
                 />
               </div>
             </Base>
