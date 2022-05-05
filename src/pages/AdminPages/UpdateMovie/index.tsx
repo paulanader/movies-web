@@ -38,7 +38,7 @@ const UpdateMovie: React.FC = () => {
         <MainHeader />
         <div className="d-flex w-100">
           <Sidebar />
-          <Base title="Editar filme">
+          <Base>
             <div
               className="row row-cols-1 align-items-center justify-content-center text-center mt-5"
               onSubmit={() => {}}

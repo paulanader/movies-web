@@ -25,7 +25,6 @@ export const LoginComponent = () => {
 
   const handleSignIn: SubmitHandler<SignInFormData> = async (values) => {
     await new Promise((resolve) => setTimeout(resolve, 3000));
-    console.log(values);
   };
 
   return (

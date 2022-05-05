@@ -12,6 +12,7 @@ const TextArea: React.FC<IInputProps> = ({ placeholder, name, _onChange }) => {
       className="form-control border-bottom mb-5"
       placeholder={placeholder}
       onChange={_onChange}
+      value={name}
     ></StyleInput>
   );
 };

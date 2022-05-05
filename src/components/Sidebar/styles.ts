@@ -11,12 +11,9 @@ export const SidebarStyles = styled.div`
   margin-right: 4;
 `;
 
-interface IStyleSidebarLinkProps {
-  isActive?: boolean;
-}
-export const StyleSidebarLink = styled(Link)<IStyleSidebarLinkProps>`
+export const StyleSidebarLink = styled(Link)`
   text-decoration: none;
-  color: ${({ isActive }) => (isActive ? "#ffd640" : "#f7fafc")};
+  color: #f7fafc;
   margin-bottom: 10px;
 
   &:hover {

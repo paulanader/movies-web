@@ -1,7 +1,7 @@
 import ReactPaginate from "react-paginate";
 import styled from "styled-components";
 
-const Pagination = styled(ReactPaginate)`
+const AdminPagination = styled(ReactPaginate)`
   display: flex;
   justify-content: center;
   margin: 0;
@@ -17,12 +17,12 @@ const Pagination = styled(ReactPaginate)`
       border-radius: 3px;
 
       text-decoration: none;
-      background-color: #718096;
+      background-color: #2c5282;
       color: var(--black10);
     }
 
     &.selected a {
-      background-color: #ffd640;
+      background-color: #0d6efd;
     }
 
     &.previous,
@@ -32,4 +32,4 @@ const Pagination = styled(ReactPaginate)`
   }
 `;
 
-export default Pagination;
+export default AdminPagination;

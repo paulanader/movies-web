@@ -23,7 +23,7 @@ const DellMovie: React.FC = () => {
         <MainHeader />
         <div className="d-flex w-100">
           <Sidebar />
-          <Base title="Filmes">
+          <Base>
             <div className="row row-cols-1 row-cols-sm-2 d-flex align-items-center justify-content-between mt-5">
               <div className="col col-sm-9">
                 <select

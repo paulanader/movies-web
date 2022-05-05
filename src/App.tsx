@@ -1,4 +1,7 @@
 import { ActorProvider } from "./hooks/ActorProvider";
+import { AdminActorProvider } from "./hooks/Admin/AdminActorProvider";
+import { AdminCategoryProvider } from "./hooks/Admin/AdminCategoryProvider";
+import { AdminMovieProvider } from "./hooks/Admin/AdminMovieProvider";
 import { CategoryProvider } from "./hooks/CategoryProvider";
 import { MovieProvider } from "./hooks/MoviesProvider";
 import PagesRoutes from "./pagesRoutes";
@@ -10,7 +13,13 @@ const App: React.FC = () => {
       <CategoryProvider>
         <MovieProvider>
           <ActorProvider>
-            <PagesRoutes />
+            <AdminCategoryProvider>
+              <AdminMovieProvider>
+                <AdminActorProvider>
+                  <PagesRoutes />
+                </AdminActorProvider>
+              </AdminMovieProvider>
+            </AdminCategoryProvider>
           </ActorProvider>
         </MovieProvider>
       </CategoryProvider>

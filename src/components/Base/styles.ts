@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const Contant = styled.div`
   width: 100%;
+  min-height: 70vh;
   align-items: start;
   color: #fff;
   background: #1a202c;
